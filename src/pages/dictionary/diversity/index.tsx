@@ -1,0 +1,95 @@
+import React, { ReactElement, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import DashboardLayout from "../../../layouts/Dashboard";
+import PlusIcon from "@untitled-ui/icons-react/build/esm/Plus";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Stack,
+  SvgIcon,
+  Typography,
+} from "@mui/material";
+import Link from "next/link";
+import { paths } from "../../../paths";
+import { useDispatch, useSelector } from "../../../store";
+import { getAllDiversity } from "../../../thunks/diversity";
+import { DiversityListTable } from "../../../sections/dictionaries/diversity/list-table";
+import Loader from "../../../components/Loader";
+import withAccessControl from "../../../layouts/accessControl";
+import { ROLE } from "../../../constants";
+
+function DiversityDictionaries() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllDiversity());
+  }, [dispatch]);
+
+  const diversityData = useSelector((state) => state.diversity.diversity);
+  const isSuccessLoad = useSelector((state) => state.diversity.isSuccess);
+  const isLoadData = isSuccessLoad && diversityData && diversityData.length > 0;
+  const isNotFoundData = diversityData && diversityData.length === 0;
+
+  return (
+    <>
+      <Helmet title="Diversity" />
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          py: 8,
+        }}
+      >
+        <Container maxWidth="xl">
+          <Stack spacing={4}>
+            <Stack direction="row" justifyContent="space-between" spacing={4}>
+              <Stack spacing={1}>
+                <Typography variant="h3" gutterBottom display="inline">
+                  Diversity list
+                </Typography>
+                <Stack alignItems="center" direction="row" spacing={1} />
+              </Stack>
+              <Stack alignItems="center" direction="row" spacing={3}>
+                <Link href={paths.dictionary.diversity.create}>
+                  <Button
+                    startIcon={
+                      <SvgIcon>
+                        <PlusIcon />
+                      </SvgIcon>
+                    }
+                    variant="contained"
+                  >
+                    Add
+                  </Button>
+                </Link>
+              </Stack>
+            </Stack>
+            {isLoadData ? (
+              <Card>
+                <DiversityListTable data={diversityData} />
+              </Card>
+            ) : isNotFoundData ? (
+              <Stack alignItems="center">
+                <Typography variant="h6">No diversity types found</Typography>
+              </Stack>
+            ) : (
+              <Stack alignItems="center">
+                <Loader />
+              </Stack>
+            )}
+          </Stack>
+        </Container>
+      </Box>
+    </>
+  );
+}
+
+DiversityDictionaries.getLayout = function getLayout(page: ReactElement) {
+  return <DashboardLayout>{page}</DashboardLayout>;
+};
+
+export default withAccessControl([ROLE.ADMIN, ROLE.SUPERVISOR])(
+  DiversityDictionaries
+);

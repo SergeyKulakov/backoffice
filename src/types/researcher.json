@@ -1,0 +1,130 @@
+[
+  {
+    "linkedinUrl": "https://www.linkedin.com/in/daniele-serfilippi/",
+    "profileImage": "",
+    "profileType": "Buyside",
+    "isArchived": false,
+    "info": {
+      "firstName": {
+        "value": "John1",
+        "isMarked": true
+      },
+      "lastName": {
+        "value": "Connor",
+        "isMarked": false
+      },
+      "gender": {
+        "value": [
+          { "value": "female", "label": "Female" },
+          { "value": "male", "label": "Male" }
+        ],
+        "isMarked": true
+      },
+      "diversity": {
+        "value": [
+          { "value": "id12345", "label": "Diversity one" },
+          { "value": "id123", "label": "Diversity two" }
+        ],
+        "isMarked": true
+      },
+      "suggestedTeamPrimary": {
+        "value": [
+          { "value": "id12345", "label": "suggestedTeamPrimary1" },
+          { "value": "id2345", "label": "suggestedTeamPrimary2" }
+        ],
+        "isMarked": false
+      },
+      "suggestedTeamSecondary": {
+        "value": [
+          { "value": "id12345", "label": "suggestedTeamSecondary 1" },
+          { "value": "id18345", "label": "suggestedTeamSecondary 2" }
+        ],
+        "isMarked": false
+      },
+      "suggestedStrategy": [
+        {
+          "isMarked": false,
+          "label": "suggestedStrategy",
+          "value": [
+            { "value": "id1345", "label": "suggestedStrategy 1" },
+            { "value": "id12345", "label": "suggestedStrategy 2" }
+          ],
+          "subValues": [
+            {
+              "value": [
+                { "value": "id12345", "label": "suggestedStrategy 1" },
+                { "value": "id12345", "label": "suggestedStrategy 2" }
+              ],
+              "label": "suggestedStrategy1",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "suggestedCoverage": {
+        "label": "suggested Coverage",
+        "isMarked": false,
+        "value": [
+          { "value": "id12347", "label": "suggestedCoverage 1" },
+          { "value": "id12345", "label": "suggestedCoverage 2" }
+        ]
+      },
+      "suggestedGeography": {
+        "label": "suggested Geography",
+        "isMarked": false,
+        "value": [
+          { "value": "id17345", "label": "suggestedGeography 1" },
+          { "value": "id12345", "label": "suggestedGeography 2" }
+        ]
+      },
+      "startedFirstSellsideRoleDate": "2021-03-05T00:00:00.000Z",
+      "joinedCurrentEmployerDate": "2022-04-05T00:00:00.000Z",
+      "startedFirstInvestmentRoleDate": "2020-04-05T00:00:00.000Z",
+      "isNoSellsideMarked": false,
+      "suggestedSellsideTeam": {
+        "label": "suggested Geography",
+        "isMarked": false,
+        "value": [
+          { "value": "id12385", "label": "suggestedSellsideTeam one" },
+          { "value": "id12345", "label": "suggestedSellsideTeam two" }
+        ]
+      }
+    },
+    "education": [
+      {
+        "university": "Cambridge University",
+        "degreeType": "Master",
+        "subject": "Economics",
+        "startDate": "2023-04-05T00:00:00.000Z",
+        "endDate": "2023-04-05T00:00:00.000Z",
+        "isHidden": false
+      },
+      {
+        "university": "Fake University",
+        "degreeType": "Master",
+        "subject": "Engineering",
+        "startDate": "2023-04-05T00:00:00.000Z",
+        "endDate": "2023-04-05T00:00:00.000Z",
+        "isHidden": false
+      }
+    ],
+    "currentEmployment": [
+      {
+        "company": "Dashdevs",
+        "jobTitle": "Project Manager",
+        "location": "New York, USA",
+        "startDate": "2023-04-05T00:00:00.000Z",
+        "endDate": "2023-04-05T00:00:00.000Z",
+        "isPrimarySelected": false
+      },
+      {
+        "company": "Example",
+        "jobTitle": "Project Manager",
+        "location": "New York, USA",
+        "startDate": "2023-04-05T00:00:00.000Z",
+        "endDate": "2023-04-05T00:00:00.000Z",
+        "isPrimarySelected": false
+      }
+    ]
+  }
+]
